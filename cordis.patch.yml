@@ -1,0 +1,7 @@
+# dsh-purge-mode：原生 / purge 双模热切换。
+#
+# 本插件只做「开关」，不改 dsh-purge 源码、不写宿主包：
+# 运行时翻转 dsh-purge 插件自己持有的 config 对象，下一轮 assemble 即换方案。
+- insert:
+    - id: dsh-purge-mode
+      name: 'dsh-purge-mode'
