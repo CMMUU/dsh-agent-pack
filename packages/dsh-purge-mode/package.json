@@ -1,0 +1,41 @@
+{
+  "name": "dsh-purge-mode",
+  "version": "2.1.0",
+  "private": true,
+  "type": "module",
+  "description": "原生 / purge 双模按会话切换：在对话框切换 dsh-purge 的提示词方案，对话之间完全隔离、下一轮生效、零重启。",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "icon.svg"
+  ],
+  "dsh": {
+    "install": {
+      "preferred": "git",
+      "git": "https://github.com/cmmuu/dsh-purge-mode.git"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-sidebar-right"
+      ]
+    }
+  },
+  "license": "MIT"
+}
